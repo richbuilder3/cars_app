@@ -48,6 +48,7 @@ class CarsController < ApplicationController
 	end
 
 	def destroy
+		@car = Car.find(params[:id])
 
 	end
 
