@@ -1,19 +1,35 @@
 class CarsController < ApplicationController 
 
 	def index
-
+		@cars = Car.all
 	end
 
 	def new
+
+		render :'cars/new'
 
 	end
 
 	def create
 
+		@year = params[:year]
+		@make = params[:make]
+		@model = params[:model]
+		@color = params[:color]
+
+		@car = Car.create!({
+			year: @year, 
+			make: @make,
+			model: @model,
+			color: @color
+		})
+
+		render :'cars/show'
+		
 	end
 
 	def show
-
+		@car = Car.find(params[:id])
 	end
 
 	def edit
@@ -32,6 +48,7 @@ class CarsController < ApplicationController
 	end
 
 	def destroy
+		@car = Car.find(params[:id])
 
 	end
 
