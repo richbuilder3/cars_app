@@ -1,0 +1,14 @@
+<h1>Car's Page/Index</h1>
+
+<table>
+	<% @cars.each do |car| %>
+	<tr>
+	<td><%= car.year %></td>
+	<td><%= car.make %></td>
+	<td><%= car.model %></td>
+	<td><%= car.color %><td>
+	<% end %>
+</tr>
+</table>
+
+
