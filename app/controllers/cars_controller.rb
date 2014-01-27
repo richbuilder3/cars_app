@@ -6,10 +6,26 @@ class CarsController < ApplicationController
 
 	def new
 
+		render :'cars/new'
+
 	end
 
 	def create
 
+		@year = params[:year]
+		@make = params[:make]
+		@model = params[:model]
+		@color = params[:color]
+
+		@car = Car.create!({
+			year: @year, 
+			make: @make,
+			model: @model,
+			color: @color
+		})
+
+		render :'cars/show'
+		
 	end
 
 	def show
