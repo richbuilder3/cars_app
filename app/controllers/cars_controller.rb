@@ -48,8 +48,8 @@ class CarsController < ApplicationController
 	end
 
 	def destroy
-		@car = Car.find(params[:id])
-
+		Car.delete(params[:id])
+		redirect_to '/cars'
 	end
 
 
