@@ -1,6 +1,8 @@
 <body>
-<div class="new_car" style="background-color: lightblue">
-<form id="new_car" action="<%= cars_path %>" method="post">
+<div class="well">
+<form class="bs-example form-horizontal" action="<%= cars_path %>" method="post">
+	<fieldset>
+		<legend>Submit Your Car</legend>
 	<input type="text" name="year" id="year" maxlength="10" placeholder="Year"><br>
 	<input type="text" name="make" id="make" maxlength="300" placeholder="Make"><br>
 	<input type="text" name="model" id="model" maxlength="300" placeholder="Model"><br>
