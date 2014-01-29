@@ -1,15 +1,25 @@
 <h1>Car's Page/Index</h1>
 
 <table>
-	<% @cars.each do |car| %>
-	<tr>
-	<td><%= car.year %></td>
-	<td><%= car.make %></td>
-	<td><%= car.model %></td>
-	<td><%= car.color %><td>
-	<% end %>
-</tr>
+	<thead>
+		<th>Year</th>
+		<th>Make</th>
+		<th>Model</th>
+		<th>Color</th>
+		<th>Commands</th>
+	</thead>
+	<tbody>
+		<% @cars.each do |car| %>
+		<tr>
+			<td><%= car.year %></td>
+			<td><%= car.make %></td>
+			<td><%= car.model %></td>
+			<td><%= car.color %><td>
+			<td>EDIT</td>
+			<td>SHOW</td>
+			<td>DELETE</td>
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 <a href="<%= new_car_path %>">Create a New Car</a>
-
-
