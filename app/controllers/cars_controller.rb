@@ -6,8 +6,6 @@ class CarsController < ApplicationController
 
 	def new
 
-		render :'cars/new'
-
 	end
 
 	def create
@@ -24,7 +22,7 @@ class CarsController < ApplicationController
 			color: @color
 		})
 
-		render :'cars/show'
+		redirect_to car_path(@car)
 		
 	end
 

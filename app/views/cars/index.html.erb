@@ -1,15 +1,30 @@
 <h1>Car's Page/Index</h1>
 
 <table>
-	<% @cars.each do |car| %>
-	<tr>
-	<td><%= car.year %></td>
-	<td><%= car.make %></td>
-	<td><%= car.model %></td>
-	<td><%= car.color %><td>
-	<% end %>
-</tr>
+	<thead>
+		<th>Year</th>
+		<th>Make</th>
+		<th>Model</th>
+		<th>Color</th>
+		<th>Commands</th>
+	</thead>
+	<tbody>
+		<% @cars.each do |car| %>
+		<tr>
+			<td><%= car.year %></td>
+			<td><%= car.make %></td>
+			<td><%= car.model %></td>
+			<td><%= car.color %><td>
+			<td><a href="<%= edit_car_path(car) %>">EDIT</a></td>
+			<td><a href="<%= car_path(car) %>">SHOW</a></td>
+			<td>
+				<form action="<%=car_path(car)%>" method="post">
+					<input type="hidden" value="delete" name="_method">
+					<button>DELETE</button>
+				</form>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
 </table>
 <a href="<%= new_car_path %>">Create a New Car</a>
-
-
