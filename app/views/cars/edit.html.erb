@@ -1,8 +1,8 @@
-<form action="<%= car_path(car) %>" method="post">
-	<input type="text" name="year" placeholder="Year" />
-	<input type="text" name="make" placeholder="Make" />
-	<input type="text" name="model" placeholder="Model" />
-	<input type="text" name="color" placeholder="Color" />
+<form action="<%= car_path(@car) %>" method="post">
+	<input type="text" name="year" value="<%= @car.year %>"/>
+	<input type="text" name="make" value="<%= @car.make %>" />
+	<input type="text" name="model" value="<%= @car.model %>" />
+	<input type="text" name="color" value="<%= @car.color %>" />
 	<input name="_method" type="hidden" value="put" />
 	<input type="submit" value="Edit">
 </form>
