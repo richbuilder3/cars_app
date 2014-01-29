@@ -15,9 +15,14 @@
 			<td><%= car.make %></td>
 			<td><%= car.model %></td>
 			<td><%= car.color %><td>
-			<td>EDIT</td>
-			<td>SHOW</td>
-			<td>DELETE</td>
+			<td><a href="<%= edit_car_path(car) %>">EDIT</a></td>
+			<td><a href="<%= car_path(car) %>">SHOW</a></td>
+			<td>
+				<form action="<%=car_path(car)%>" method="post">
+					<input type="hidden" value="delete" name="_method">
+					<button>DELETE</button>
+				</form>
+			</td>
 		</tr>
 		<% end %>
 	</tbody>
